@@ -1,0 +1,11 @@
+# Release artifacts are published to GitHub Releases, not committed.
+/dist/
+abec
+abec-linux-*
+*.ll
+*.o
+
+# Never commit license material.
+*.key
+*.pem
+*.license
