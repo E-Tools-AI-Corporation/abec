@@ -68,10 +68,20 @@ export ABE_LICENSE_FILE=/path/to/license
 ```
 
 Precedence: `ABEC_LICENSE` → `ABE_LICENSE_FILE` → `~/.abe/license`. `abec --version`
-always works without a license.
+always works without a license. License validation is **offline** — no internet
+connectivity is required for licensed operation.
+
+**You own what you build.** A compiler license does not encumber your output: you keep
+all rights to your code, you can sell software built with Abec, and the **Abe™ Runtime is
+royalty-free to deploy and redistribute** with your applications (static *or* dynamic
+linking) — no per-user, per-device, or per-install fees.
 
 **To buy a license or request an extended evaluation: licensing@e-tools.ai.**
-Use of Abec is governed by the **[End-User License Agreement](EULA.md)**.
+
+License documents (the PDFs in [`legal/`](legal/) are the controlling versions):
+- **[Abec™ Compiler EULA](EULA.md)** — terms for using the compiler.
+- **[Abe™ Runtime Redistribution License (ARRL)](ABE-RUNTIME-REDISTRIBUTION-LICENSE.md)** — royalty-free runtime redistribution.
+- **[Licensing FAQ](LICENSING-FAQ.md)** — the short answers.
 
 ## Example
 
