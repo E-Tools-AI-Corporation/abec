@@ -59,11 +59,33 @@ abec --check   yourfile.abe          # parse + type-check (errors/warnings)
 abec --emit-ll yourfile.abe > out.ll # parse + type-check + LLVM IR
 ```
 
-## 4. Native executables (requires the Abe runtime)
+## 4. Native executables (with the Abe runtime)
 
-`abec yourfile.abe -o yourprog` additionally needs the Abe **runtime** archives and a
-local LLVM toolchain (`llc`, `clang`). The runtime is distributed separately — contact
-**licensing@e-tools.ai** for access and setup instructions.
+`abec yourfile.abe -o yourprog` (or just `abec yourfile.abe` → `./yourfile`) needs the
+Abe **runtime** plus a local LLVM toolchain (`clang` + `llc` on `PATH`).
+
+Easiest is the **bundle** (compiler + runtime together):
+
+```bash
+curl -fsSL -O https://github.com/E-Tools-AI-Corporation/abec/releases/latest/download/abec-0.1.0-linux-x86_64.tar.gz
+tar xzf abec-0.1.0-linux-x86_64.tar.gz && cd abec-0.1.0
+bin/abec hello.abe && ./hello        # abec finds runtime/ automatically
+```
+
+Or install the **runtime separately** (freely redistributable, ARRL) next to an existing
+`abec`, or point at it:
+
+```bash
+curl -fsSL -O https://github.com/E-Tools-AI-Corporation/abec/releases/latest/download/abe-runtime-0.1.0-linux-x86_64.tar.gz
+tar xzf abe-runtime-0.1.0-linux-x86_64.tar.gz       # -> runtime/
+export ABE_RUNTIME_DIR="$PWD/runtime"               # or place runtime/ beside the abec binary
+```
+
+`abec` resolves the runtime via `$ABE_RUNTIME_DIR` → `<bin>/../runtime` →
+`<bin>/../lib/abe/runtime` → `<bin>/runtime` → `/usr/local/lib/abe/runtime`. Omitting
+`-o` defaults the output to the input's base name (`foo.abe` → `foo`). Programs using
+postgres/redis/http/crypto also need the matching **system** libraries installed
+(`libpq`, `libhiredis`, `libcurl`, `libssl`).
 
 ## Troubleshooting
 

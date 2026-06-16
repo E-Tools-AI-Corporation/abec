@@ -8,7 +8,7 @@ This repository distributes **prebuilt `abec` binaries and documentation**. Abec
 a **commercial product of E-Tools AI Corporation**; the compiler source is private.
 The Abe **runtime** is a separate, freely-linkable library.
 
-> **Status:** `0.1.0` preview · **platform: Linux x86-64** (glibc ≥ 2.34). macOS,
+> **Status:** `0.1.0` · **platform: Linux x86-64** (glibc ≥ 2.34). macOS,
 > Windows, and ARM builds are not published yet.
 
 ---
@@ -43,12 +43,40 @@ See **[INSTALL.md](INSTALL.md)** for full setup and license activation.
 | `abec --version`, `--help` | ✅ (no license needed) |
 | `abec --check FILE` | ✅ parse + type-check |
 | `abec --emit-ll FILE` | ✅ parse + type-check + LLVM IR |
-| `abec FILE -o OUT` (native link) | ⚠️ requires the Abe **runtime** — see below |
+| `abec FILE -o OUT` (native link) | ✅ with the Abe **runtime** — see [Native builds](#native-builds) |
 
-Producing a **native executable** additionally needs the Abe runtime archives and a
-local LLVM toolchain (`llc`/`clang`). The runtime is distributed separately — contact
-**licensing@e-tools.ai** for access. (Source-level compilation above needs nothing but
-the `abec` binary.)
+Source-level commands need only the `abec` binary. **Native executables** also need the
+Abe **runtime** and a local LLVM toolchain (`clang` + `llc`).
+
+## Native builds
+
+Two ways to get a working compiler + runtime:
+
+**A. Bundle (simplest)** — one download with `abec` + the runtime side by side:
+
+```bash
+curl -fsSL -O https://github.com/E-Tools-AI-Corporation/abec/releases/latest/download/abec-0.1.0-linux-x86_64.tar.gz
+tar xzf abec-0.1.0-linux-x86_64.tar.gz && cd abec-0.1.0
+bin/abec hello.abe        # -> ./hello   (abec finds runtime/ automatically)
+./hello
+```
+
+**B. Separate runtime** — if you already have `abec`. The runtime is freely
+redistributable under the [ARRL](ABE-RUNTIME-REDISTRIBUTION-LICENSE.md):
+
+```bash
+curl -fsSL -O https://github.com/E-Tools-AI-Corporation/abec/releases/latest/download/abe-runtime-0.1.0-linux-x86_64.tar.gz
+tar xzf abe-runtime-0.1.0-linux-x86_64.tar.gz     # -> runtime/
+export ABE_RUNTIME_DIR="$PWD/runtime"             # or place runtime/ next to the abec binary
+abec hello.abe
+```
+
+`abec` locates the runtime via `$ABE_RUNTIME_DIR`, then relative to its own binary
+(`<bin>/../runtime`, `<bin>/../lib/abe/runtime`, `<bin>/runtime`), then
+`/usr/local/lib/abe/runtime`. Requires `clang` + `llc` on `PATH`. If `-o` is omitted the
+output name defaults to the input's base name (`foo.abe` → `foo`). Programs that use
+postgres/redis/http/crypto also need the matching system libraries (`libpq`, `hiredis`,
+`libcurl`, `libssl`) installed.
 
 ## Licensing
 

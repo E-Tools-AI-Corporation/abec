@@ -4,6 +4,12 @@ All notable changes to published `abec` releases are documented here.
 
 ## v2026.06.16 — 0.1.0 (Linux x86-64)
 - Version string is now **0.1.0** (`abec --version`).
+- **Native builds now work off-box.** `abec` locates the runtime relocatably
+  (`$ABE_RUNTIME_DIR`, then relative to the binary, then system defaults) instead of a
+  hardcoded path. New downloads: a **runtime tarball** (`abe-runtime-…tar.gz`, ARRL) and
+  a **bundle** (`abec-…tar.gz`, compiler + runtime). See README → Native builds.
+- `abec FILE` with **no `-o`** now defaults the output to the input's base name
+  (`foo.abe` → `foo`).
 - Evaluation grace window is **30 days** per build (was 90); extended trials are
   available as license tokens — contact licensing@e-tools.ai.
 - Same compiler capabilities as the preview (`--check`, `--emit-ll`; ARC + cycle
