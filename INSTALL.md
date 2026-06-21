@@ -67,8 +67,8 @@ Abe **runtime** plus a local LLVM toolchain (`clang` + `llc` on `PATH`).
 Easiest is the **bundle** (compiler + runtime together):
 
 ```bash
-curl -fsSL -O https://github.com/E-Tools-AI-Corporation/abec/releases/latest/download/abec-0.1.0-linux-x86_64.tar.gz
-tar xzf abec-0.1.0-linux-x86_64.tar.gz && cd abec-0.1.0
+curl -fsSL -O https://github.com/E-Tools-AI-Corporation/abec/releases/latest/download/abec-0.2.0-linux-x86_64.tar.gz
+tar xzf abec-0.2.0-linux-x86_64.tar.gz && cd abec-0.2.0
 bin/abec hello.abe && ./hello        # abec finds runtime/ automatically
 ```
 
@@ -76,8 +76,8 @@ Or install the **runtime separately** (freely redistributable, ARRL) next to an 
 `abec`, or point at it:
 
 ```bash
-curl -fsSL -O https://github.com/E-Tools-AI-Corporation/abec/releases/latest/download/abe-runtime-0.1.0-linux-x86_64.tar.gz
-tar xzf abe-runtime-0.1.0-linux-x86_64.tar.gz       # -> runtime/
+curl -fsSL -O https://github.com/E-Tools-AI-Corporation/abec/releases/latest/download/abe-runtime-0.2.0-linux-x86_64.tar.gz
+tar xzf abe-runtime-0.2.0-linux-x86_64.tar.gz       # -> runtime/
 export ABE_RUNTIME_DIR="$PWD/runtime"               # or place runtime/ beside the abec binary
 ```
 
