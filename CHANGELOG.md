@@ -19,6 +19,11 @@ First stable release of the Abe Pro Compiler.
 - Carries the relocatable runtime resolution (`ABE_RUNTIME_DIR` → binary-relative
   → system paths), default output name (`abec FILE` → `FILE` basename), and the
   offline Ed25519 license gate with an evaluation grace period.
+- **Documentation:** the previously-separate Level 1 and Level 2 manuals are now
+  a single **[Abe Pro Programming Manual](https://github.com/E-Tools-AI-Corporation/abec/releases/latest/download/ABE-Pro-Programming-Manual-1.0.0.md)**
+  release asset — Part I (Level 1, general applications, 14 chapters), Part II
+  (Level 2, machine learning, 22 chapters), and a runtime-function reference.
+  Every example is still compiled and run by the regression suite.
 
 ## v2026.06.21 — 0.2.0 (Linux x86-64)
 - **Version bump 0.1.0 → 0.2.0** (`abec --version`) — the Level-2 machine-learning

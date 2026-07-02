@@ -27,9 +27,9 @@ The Abe **runtime** is a separate, freely-linkable library.
 > distillation**, **conversational-AI** statements, single-process **distributed
 > training** (`@ddp`), and **ONNX** interoperability.
 >
-> The **[Abe Pro ML Manual (Level 2)](https://github.com/E-Tools-AI-Corporation/abec/releases/latest/download/ABE-Pro-ML-Manual-0.2.0.md)**
-> documents all of it across **22 chapters** — every example compiled *and run*
-> by the regression suite. See the full [release notes](https://github.com/E-Tools-AI-Corporation/abec/releases/tag/v2026.06.21)
+> The **[Abe Pro Programming Manual](https://github.com/E-Tools-AI-Corporation/abec/releases/latest/download/ABE-Pro-Programming-Manual-1.0.0.md)**
+> documents all of it — Level 2 spans **22 chapters**, every example compiled
+> *and run* by the regression suite. See the full [release notes](https://github.com/E-Tools-AI-Corporation/abec/releases/tag/v1.0.0)
 > and the [CHANGELOG](CHANGELOG.md).
 
 ---
@@ -101,18 +101,24 @@ postgres/redis/http/crypto also need the matching system libraries (`libpq`, `hi
 
 ## Documentation
 
-Two manuals ship with every release as downloadable assets. Every example in
-both is compiled **and run** by the regression suite, so the code you read is
-code that works.
+The **Abe Pro Programming Manual** ships with every release as a downloadable
+asset. Every example is compiled **and run** by the regression suite, so the
+code you read is code that works.
 
-- **[Abe Pro User Manual (Level 1)](https://github.com/E-Tools-AI-Corporation/abec/releases/latest/download/ABE-Pro-User-Manual-0.2.0.md)**
-  — general-purpose programming and the runtime library.
-- **[Abe Pro ML Manual (Level 2)](https://github.com/E-Tools-AI-Corporation/abec/releases/latest/download/ABE-Pro-ML-Manual-0.2.0.md)**
-  — the machine-learning toolchain (22 chapters): tensors, layers/models,
-  attention, inference + `generate`, tokenization, serving, loading weights,
-  training + LoRA, quantization, mixed precision, GPU, autograd/einsum,
-  convolution, OO layers/models, weight tying, Mixture of Experts, custom
-  gradients, distillation, conversational AI, distributed training, and ONNX.
+- **[Abe Pro Programming Manual](https://github.com/E-Tools-AI-Corporation/abec/releases/latest/download/ABE-Pro-Programming-Manual-1.0.0.md)**
+  — one manual, two levels, plus a full runtime-function reference:
+  - **Part I — Level 1: General Application Programming** (14 chapters):
+    types, functions, control flow, collections, error handling, classes/enums,
+    modules, and the runtime library — strings/JSON, crypto/auth, environment,
+    files, caching, HTTP, and database.
+  - **Part II — Level 2: Machine Learning** (22 chapters): tensors,
+    layers/models, attention, inference + `generate`, tokenization, serving,
+    loading weights, training + LoRA, quantization, mixed precision, GPU,
+    autograd/einsum, convolution, OO layers/models, weight tying, Mixture of
+    Experts, custom gradients, distillation, conversational AI, distributed
+    training, and ONNX.
+  - **Appendix — Runtime Function Reference**: a categorized index of every
+    runtime function, grouped by level.
 
 ## Licensing
 
