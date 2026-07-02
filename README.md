@@ -128,6 +128,12 @@ split:
 - **[Abe Pro ML Manual (Level 2)](https://github.com/E-Tools-AI-Corporation/abec/releases/latest/download/ABE-Pro-ML-Manual-1.0.0.md)**
   — the machine-learning toolchain, 22 chapters (Part II on its own).
 
+**PDF editions** (same content, in [`pdf/`](pdf/)):
+
+- [Abe Pro Programming Manual (PDF)](pdf/ABE-Pro-Programming-Manual-1.0.0.pdf)
+- [Abe Pro User Manual — Level 1 (PDF)](pdf/ABE-Pro-User-Manual-1.0.0.pdf)
+- [Abe Pro ML Manual — Level 2 (PDF)](pdf/ABE-Pro-ML-Manual-1.0.0.pdf)
+
 ## Licensing
 
 Abec is licensed software. **Without a license it runs in evaluation mode** — it still
