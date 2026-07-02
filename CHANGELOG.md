@@ -2,6 +2,24 @@
 
 All notable changes to published `abec` releases are documented here.
 
+## v1.0.0 — 1.0.0 (Linux x86-64)
+
+First stable release of the Abe Pro Compiler.
+
+- **Version bump 0.2.0 → 1.0.0** (`abec --version`).
+- **Codegen correctness — string comparison fix:** `arr[i] == arr[j]` where both
+  operands are `string[]` element loads now correctly lowers to
+  `abe_string_equals` (dual-rep tolerant) instead of a raw pointer compare, which
+  returned `false` even for equal strings. A regression test guards it.
+- **ARC memory-management hardening:** push-grown containers, string-concat and
+  `+=`/reassignment temporaries, and borrow-only sinks (e.g. `console.log`) are
+  released correctly; the Abe-program leak harness passes its 0-leak assertions.
+- **Cross-module symbol de-duplication** for co-compiled modules (no duplicate
+  class-method / helper emission).
+- Carries the relocatable runtime resolution (`ABE_RUNTIME_DIR` → binary-relative
+  → system paths), default output name (`abec FILE` → `FILE` basename), and the
+  offline Ed25519 license gate with an evaluation grace period.
+
 ## v2026.06.21 — 0.2.0 (Linux x86-64)
 - **Version bump 0.1.0 → 0.2.0** (`abec --version`) — the Level-2 machine-learning
   surface is a feature addition over the 0.1.x line.
