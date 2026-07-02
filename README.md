@@ -120,6 +120,14 @@ code you read is code that works.
   - **Appendix — Runtime Function Reference**: a categorized index of every
     runtime function, grouped by level.
 
+The two levels are also available as standalone manuals, if you prefer them
+split:
+
+- **[Abe Pro User Manual (Level 1)](https://github.com/E-Tools-AI-Corporation/abec/releases/latest/download/ABE-Pro-User-Manual-1.0.0.md)**
+  — general-purpose programming and the runtime library (Part I on its own).
+- **[Abe Pro ML Manual (Level 2)](https://github.com/E-Tools-AI-Corporation/abec/releases/latest/download/ABE-Pro-ML-Manual-1.0.0.md)**
+  — the machine-learning toolchain, 22 chapters (Part II on its own).
+
 ## Licensing
 
 Abec is licensed software. **Without a license it runs in evaluation mode** — it still
